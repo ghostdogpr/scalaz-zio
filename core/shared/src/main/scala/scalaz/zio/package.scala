@@ -35,6 +35,9 @@ package object zio extends EitherCompat {
   type Queue[A] = Queue2[Any, Nothing, Any, Nothing, A, A]
   val Queue = Queue2
 
+  type Hub[A] = ZHub[A, A]
+  val Hub = ZHub
+
   val JustExceptions: PartialFunction[Throwable, Exception] = {
     case e: Exception => e
   }
